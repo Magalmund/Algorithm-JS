@@ -46,43 +46,45 @@ const tree = [
 ]
 
 
-//RECURSIVE METHOD
-const recursive = (tree) => {
-	let sum = 0;
-	tree.forEach(node => {
-		sum += node.v
-		if(!node.c) {
-			return node.v
-		} else {
-			sum += recursive(node.c)
-		}
-	});
-	return sum
-}
+// //RECURSIVE METHOD
+// const recursive = (tree) => {
+// 	let sum = 0;
+// 	tree.forEach(node => {
+// 		sum += node.v
+// 		if(!node.c) {
+// 			return node.v
+// 		} else {
+// 			sum += recursive(node.c)
+// 		}
+// 	});
+// 	return sum
+// }
 
-console.log(recursive(tree));
+// console.log(recursive(tree));
 
 
 
-//ITERATION METHOD
-const iteration = (tree) => {
-	if(!tree.length){
-		return 0
-	}
+// //ITERATION METHOD
+// const iteration = (tree) => {
+// 	if(!tree.length){
+// 		return 0
+// 	}
 
-	let sum = 0;
-	let stack = [];
-	tree.forEach(node => stack.push(node))
-		while(stack.length) {
-			const node = stack.pop()
-			sum += node.v
-			if(node.c) {
-				node.c.forEach(child => stack.push(child))
-			}
-		}
-		return sum
-}
+// 	let sum = 0;
+// 	let stack = [];
+// 	tree.forEach(node => stack.push(node))
+// 		while(stack.length) {
+// 			const node = stack.pop()
+// 			sum += node.v
+// 			if(node.c) {
+// 				node.c.forEach(child => stack.push(child))
+// 			}
+// 		}
+// 		return sum
+// }
 
-console.log(iteration(tree));
+// console.log(iteration(tree));
+
+
 
 //---------------Tree-alg-end---------------

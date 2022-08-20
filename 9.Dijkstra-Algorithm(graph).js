@@ -54,5 +54,6 @@ function findNodeLowestCost(costs, processed) {
 	return lowestNode
 }
 
+
 console.log(shortPath(graph, 'a', 'g' ));
 //---------------Graph(Dijkstra algorithm)-End---------------

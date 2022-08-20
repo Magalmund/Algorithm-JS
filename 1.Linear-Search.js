@@ -13,9 +13,9 @@ function linearSearch(array, item) {
 	return null
 }
 
+
+
 console.log(linearSearch(array, 5));
 console.log('count: ', count);
-
-
 
 //---------------Linear-Search-end---------------

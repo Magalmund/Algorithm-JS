@@ -4,7 +4,6 @@ const arr = [0, 3, 2, 5, 6, 8, 1, 9, 4, 2, 1, 2, 9, 6, 4, 1, 7, -1, -5, 23, 6, 2
 let count = 0;
 
 
-
 function qSort(array) {
 	if(array.length <= 1) {
 		return array
@@ -26,7 +25,10 @@ function qSort(array) {
 	return [...qSort(less), pivot, ...qSort(greater)]
 }
 
+
 console.log(qSort(arr));
 console.log(count);
+
+
 
 //---------------Quick-Sort(Hoare sort)-end---------------
