@@ -17,10 +17,11 @@
 function isPalindrome(string){
     for (let i = 0; i < Math.floor(string.length / 2); i++) {
         // console.log(i)
-        // console.log(string.length - i - 1)
+        console.log(string.length - i - 1)
         if(string.toLowerCase().charAt(i) !== string.toLowerCase().charAt(string.length - i - 1)) return false
     }
     return true
 }
+
 
 console.log(isPalindrome('Anna'))
