@@ -9,7 +9,6 @@ graph.e = {f: 1}
 graph.f = {g: 1}
 graph.g = {}
 
-
 function shortPath(graph, start, end) {
 	const costs = {}; //Таблица где храняться кратчайшие пути
 	const processed = []; //Массив с проверенными узлами
@@ -21,7 +20,7 @@ function shortPath(graph, start, end) {
 			costs[node] = value || 10000
 		}
 	})
-	
+
 	let node = findNodeLowestCost(costs, processed)
 
 	while(node){

@@ -36,4 +36,33 @@
 
 
 
+
+function cashFunction(fn) {
+    const cash = {};
+
+    return function (n) {
+        if(cash[n]) {
+            console.log('Взято из кеша: ', cash[n])
+            return cash[n]
+        }
+        let result = fn(n)
+        console.log('Посчитала функция: ', result);
+        cash[n] = result
+        return result
+    }
+}
+
+function fibonacci(n) {
+    if (n < 2)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+
+const cashFibonacci = cashFunction(fibonacci)
+
+console.log(cashFibonacci(3))
+console.log(cashFibonacci(3))
+console.log(cashFibonacci(3))
+
 //---------------CASH-FUNCTION-END---------------
