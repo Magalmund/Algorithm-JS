@@ -23,7 +23,7 @@ const fibonachi = (n) => {
 	}
 	return fibonachi(n-1) + fibonachi(n-2)
 }
-console.log(fibonachi(5));
+console.log(fibonachi(40));
 
 
 //Right solution

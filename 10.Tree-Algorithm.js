@@ -59,7 +59,7 @@ const tree = [
 // 	});
 // 	return sum
 // }
-
+//
 // console.log(recursive(tree));
 
 
@@ -84,7 +84,6 @@ const tree = [
 // }
 
 // console.log(iteration(tree));
-
 
 
 //---------------Tree-alg-end---------------

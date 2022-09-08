@@ -9,44 +9,88 @@ graph.e = {f: 1}
 graph.f = {g: 1}
 graph.g = {}
 
-function shortPath(graph, start, end) {
-	const costs = {}; //Таблица где храняться кратчайшие пути
-	const processed = []; //Массив с проверенными узлами
-	let neighbors = {} //Соседние вершны рассматриваемого узла
+// function shortPath(graph, start, end) {
+// 	const costs = {}; //Таблица где храняться кратчайшие пути
+// 	const processed = []; //Массив с проверенными узлами
+// 	let neighbors = {} //Соседние вершны рассматриваемого узла
+//
+// 	Object.keys(graph).forEach(node => {
+// 		if(start !== node) {
+// 			let value = graph[start][node];
+// 			costs[node] = value || 10000
+// 		}
+// 	})
+//
+// 	let node = findNodeLowestCost(costs, processed)
+//
+// 	while(node){
+// 		let cost = costs[node];
+// 		neighbors = graph[node];
+//
+// 		Object.keys(neighbors).forEach(neighbor => {
+// 			let newCost = cost + neighbors[neighbor];
+// 			if(newCost < costs[neighbor]){
+// 				costs[neighbor] = newCost;
+// 			}
+// 		})
+// 		processed.push(node);
+// 		node = findNodeLowestCost(costs, processed)
+// 	}
+// 	return costs
+// }
+//
+// function findNodeLowestCost(costs, processed) {
+// 	let lowestCost = 10000;
+// 	let lowestNode;
+//
+// 	Object.keys(costs).forEach(node => {
+// 		let cost = costs[node]
+// 		if(cost < lowestCost && !processed.includes(node)){
+// 			lowestCost = cost;
+// 			lowestNode = node
+// 		}
+// 	})
+// 	return lowestNode
+// }
+
+
+function shortPath(graph, start, end){
+	let costs = {}
+	let processed = []
+	let neighbors = {}
 
 	Object.keys(graph).forEach(node => {
-		if(start !== node) {
-			let value = graph[start][node];
+		if(start != node) {
+			let value = graph[start][node]
 			costs[node] = value || 10000
 		}
 	})
-
-	let node = findNodeLowestCost(costs, processed)
+	let node = lowestCost(costs, processed)
 
 	while(node){
-		let cost = costs[node];
-		neighbors = graph[node];
+		let cost = costs[node]
+		neighbors = graph[node]
 
 		Object.keys(neighbors).forEach(neighbor => {
-			let newCost = cost + neighbors[neighbor];
+			let newCost = cost + neighbors[neighbor]
 			if(newCost < costs[neighbor]){
-				costs[neighbor] = newCost;
+				costs[neighbor] = newCost
 			}
 		})
-		processed.push(node);
-		node = findNodeLowestCost(costs, processed)
+		processed.push(node)
+		node = lowestCost(costs, processed)
 	}
 	return costs
 }
 
-function findNodeLowestCost(costs, processed) {
-	let lowestCost = 10000;
-	let lowestNode;
+function lowestCost(costs, processed) {
+	let lowestCost = 10000
+	let lowestNode
 
 	Object.keys(costs).forEach(node => {
 		let cost = costs[node]
 		if(cost < lowestCost && !processed.includes(node)){
-			lowestCost = cost;
+			lowestCost = cost
 			lowestNode = node
 		}
 	})

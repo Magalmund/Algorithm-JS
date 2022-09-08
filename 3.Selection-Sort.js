@@ -21,6 +21,7 @@ let count = 0;
 // }
 
 
+
 console.log(selectionSort(arr));
 console.log('count = ', count);
 
