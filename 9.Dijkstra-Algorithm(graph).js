@@ -54,48 +54,7 @@ graph.g = {}
 // }
 
 
-function shortPath(graph, start, end){
-	let costs = {}
-	let processed = []
-	let neighbors = {}
 
-	Object.keys(graph).forEach(node => {
-		if(start != node) {
-			let value = graph[start][node]
-			costs[node] = value || 10000
-		}
-	})
-	let node = lowestCost(costs, processed)
-
-	while(node){
-		let cost = costs[node]
-		neighbors = graph[node]
-
-		Object.keys(neighbors).forEach(neighbor => {
-			let newCost = cost + neighbors[neighbor]
-			if(newCost < costs[neighbor]){
-				costs[neighbor] = newCost
-			}
-		})
-		processed.push(node)
-		node = lowestCost(costs, processed)
-	}
-	return costs
-}
-
-function lowestCost(costs, processed) {
-	let lowestCost = 10000
-	let lowestNode
-
-	Object.keys(costs).forEach(node => {
-		let cost = costs[node]
-		if(cost < lowestCost && !processed.includes(node)){
-			lowestCost = cost
-			lowestNode = node
-		}
-	})
-	return lowestNode
-}
 
 
 console.log(shortPath(graph, 'a', 'g' ));

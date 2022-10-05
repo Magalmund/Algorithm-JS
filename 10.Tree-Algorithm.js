@@ -63,7 +63,6 @@ const tree = [
 // console.log(recursive(tree));
 
 
-
 // //ITERATION METHOD
 // const iteration = (tree) => {
 // 	if(!tree.length){
@@ -84,6 +83,8 @@ const tree = [
 // }
 
 // console.log(iteration(tree));
+
+
 
 
 //---------------Tree-alg-end---------------

@@ -25,6 +25,22 @@ graph.f = ['g']
 // }
 
 
+function breadthSearch(graph, start, end) {
+    let queue = []
+
+    queue.push(start)
+    while(queue.length > 0) {
+        const current = queue.shift()
+        if(!graph[current]){
+            graph[current] = []
+        } else if (graph[current].includes(end)){
+            return true
+        } else {
+            queue = [...queue, ...graph[current]]
+        }
+    }
+}
+
 
 console.log(breadthSearch(graph, 'a', 'g'));
 
